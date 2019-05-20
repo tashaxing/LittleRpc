@@ -1,0 +1,17 @@
+1, in win32, static mode target link to win platform lib
+2, comment all libzmq,leave out all dynamic link
+3, turn off perf tool
+4, turn off testing build
+5, add zmq.hpp in include dir
+6, IMPORTANT: xtp api and zmq conflict, xtp will call zmq dir tweetnacl.c functions, cause segment fault
+actually, xtp should call system file function
+so in zmq set:
+option (WITH_LIBSODIUM "Use libsodium instead of built-in tweetnacl" ON)
+option (ENABLE_CURVE "Enable CURVE security" OFF)
+
+and more strictly, find all occurance and set:
+set (ZMQ_USE_TWEETNACL 0)
+set (ZMQ_HAVE_CURVE 0)
+
+make the zmq tweetnacl file disabled
+
