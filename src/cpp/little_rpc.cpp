@@ -2,7 +2,7 @@
 #include <chrono>
 #include "little_rpc.h"
 
-namespace frpc
+namespace little_rpc
 {
 
 // ---- client ---- //

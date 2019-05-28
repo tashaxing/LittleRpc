@@ -1,5 +1,5 @@
-#ifndef _FRPC_H
-#define _FRPC_H
+#ifndef _LITTLE_RPC_H
+#define _LITTLE_RPC_H
 
 #include <thread>
 #include <memory>
@@ -7,7 +7,7 @@
 #include <string.h>
 #include "zmq.hpp"
 
-namespace frpc
+namespace little_rpc
 {
 using namespace std;
 
@@ -87,6 +87,6 @@ private:
 };
 
 
-} // namespace frpc
+} // namespace little_rpc
 
-#endif // !_FRPC_H
+#endif // !_LITTLE_RPC_H
