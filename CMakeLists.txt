@@ -25,15 +25,21 @@ set(SERVER_SRC
 
 add_executable(LittleRpcServer ${SERVER_SRC})
 target_link_libraries(LittleRpcServer libzmq-static)
+if (UNIX)
+target_link_libraries(LittleRpcServer pthread)
+endif()
 
 # client app
 set(CLIENT_SRC
     src/cpp/little_rpc.h
     src/cpp/little_rpc.cpp
-	src/python/little_rpc.py # only for view and edit
+        src/python/little_rpc.py # only for view and edit
     example/client.cpp
-	example/client.py  # only for view and edit
+        example/client.py  # only for view and edit
 )
 
 add_executable(LittleRpcClient ${CLIENT_SRC})
 target_link_libraries(LittleRpcClient libzmq-static)
+if (UNIX)
+target_link_libraries(LittleRpcClient pthread)
+endif()

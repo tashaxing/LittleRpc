@@ -1,7 +1,7 @@
 import sys
 # use absolute path to import rpc component
-sys.path.append("D:/codetest/LittleRpc/src/python") # windows
-# sys.path.append("/home/user/codetest/LittleRpc/src/python") # linux
+#sys.path.append("D:/codetest/LittleRpc/src/python") # windows
+sys.path.append("/home/user/codetest/LittleRpc/src/python") # linux
 from little_rpc import *
 
 class MyClient(RpcClientCallback):
