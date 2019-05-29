@@ -19,6 +19,7 @@ include_directories(
 set(SERVER_SRC
     src/cpp/little_rpc.h
     src/cpp/little_rpc.cpp
+	src/python/little_rpc.py # only for view and edit
     example/server.cpp
 )
 
@@ -29,7 +30,9 @@ target_link_libraries(LittleRpcServer libzmq-static)
 set(CLIENT_SRC
     src/cpp/little_rpc.h
     src/cpp/little_rpc.cpp
+	src/python/little_rpc.py # only for view and edit
     example/client.cpp
+	example/client.py  # only for view and edit
 )
 
 add_executable(LittleRpcClient ${CLIENT_SRC})
